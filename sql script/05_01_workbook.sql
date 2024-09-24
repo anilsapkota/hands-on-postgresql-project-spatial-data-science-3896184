@@ -1,0 +1,2 @@
+-- goal: group trip data by both ttemporal and spatial dimensions 
+-- task: create a new table named spatio_temporal_visualization_05_01 that includes total trip count by census tract and half hour intervals

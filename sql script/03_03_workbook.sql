@@ -1,0 +1,3 @@
+-- Goal: understand the bike usage throughout the day.
+-- Task: determine the times when the most bike trips start, listing these times in descending order from the busiest to the least busy, along with the corresponding bike trip counts. 
+-- Hint: GROUP_BY(), ORDER_BY()
