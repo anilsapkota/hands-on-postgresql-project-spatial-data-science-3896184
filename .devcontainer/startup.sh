@@ -14,6 +14,7 @@ sleep 5
 
 # Check if the SQL setup file exists and run it
 if [ -f .devcontainer/setup-postgresql.sql ]; then
+  sleep 20
   echo "Executing PostgreSQL setup script..."
   # Replace 'postgres' with your actual username and 'postgres' with your database name if needed
   psql -h 127.0.0.1 -U postgres -d postgres -f .devcontainer/setup-postgresql.sql
@@ -30,6 +31,7 @@ fi
 
 # Optionally, run your GeoJSON setup script
 if [ -f .devcontainer/setup-geojson.py ]; then
+  sleep 20
   echo "Loading GeoJSON data..."
   python3 .devcontainer/setup-geojson.py
 
