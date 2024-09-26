@@ -1,9 +1,8 @@
 -- double check whether postgis extension exists in our system 
-select * from pg_available_extensions;
-
+select *
+from pg_available_extensions;
 -- add extension to our workspace
-create extension postgis;
-
+create extension if not exists postgis;
 -- create table structure for stations.csv
 CREATE TABLE public.stations (
 	station_id varchar(50) NULL,
@@ -11,7 +10,6 @@ CREATE TABLE public.stations (
 	station_lon float4 NULL,
 	primary key (station_id)
 );
-
 -- create table structure for trip_data.csv
 CREATE TABLE public.trip_data (
 	ride_id varchar(50) NULL,
