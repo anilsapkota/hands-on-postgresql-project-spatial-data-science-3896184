@@ -12771,3 +12771,27 @@ INSERT INTO trip_data (ride_id, bike_type, start_time, end_time, start_station_i
 	('20240917_TW59v1', 'mechanical', '2024-09-17 23:59:21.200', '2024-09-18 00:11:05.859', 'ST_iFv', 'ST_ZqK'),
 	('20240917_BGpXyN', 'ebike', '2024-09-17 23:59:38.125', '2024-09-18 00:22:47.285', 'ST_y9f', 'ST_dHG'),
 	('20240917_qgeSHn', 'mechanical', '2024-09-17 23:59:53.002', '2024-09-18 00:03:07.822', 'ST_q1K', 'ST_Jbm');
+
+
+
+-- Create nyct2020 table in the database
+DROP TABLE IF EXISTS nyct2020;
+CREATE TABLE public.nyct2020 (
+	ogc_fid serial4 NOT NULL,
+	shape_area varchar NULL,
+	ntaname varchar NULL,
+	cdtaname varchar NULL,
+	shape_leng varchar NULL,
+	boroname varchar NULL,
+	ct2020 varchar NULL,
+	nta2020 varchar NULL,
+	borocode varchar NULL,
+	cdeligibil varchar NULL,
+	geoid varchar NULL,
+	boroct2020 varchar NULL,
+	cdta2020 varchar NULL,
+	ctlabel varchar NULL,
+	wkb_geometry geography(geometry, 4326) NULL,
+	CONSTRAINT nyct2020_pkey PRIMARY KEY (ogc_fid)
+);
+CREATE INDEX nyct2020_wkb_geometry_geom_idx ON public.nyct2020 USING gist (wkb_geometry);
