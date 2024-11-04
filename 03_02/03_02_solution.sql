@@ -7,4 +7,5 @@ UPDATE trip_data
 SET half_hour_starttime = 
     DATE_TRUNC('hour', start_time::timestamp) + 
     INTERVAL '30 minutes' * FLOOR(EXTRACT(MINUTE FROM start_time::timestamp) / 30);
-   
+
+SELECT DATE_TRUNC('hour', start_time::timestamp) FROM trip_data;
